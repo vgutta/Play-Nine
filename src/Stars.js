@@ -4,9 +4,7 @@ import _ from 'lodash';
 
 const Stars = (props) => {
 
-    const numberOfStars = Math.floor(Math.random()*9);
-
-    let stars = _.range(numberOfStars);
+    let stars = _.range(props.numberOfStars);
 
     return (
         <div className="col-5">
