@@ -17,6 +17,13 @@ class Game extends React.Component {
             selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
         }));
     };
+
+    deSelectNumber = (clickedNumber) => {
+        this.setState(prevState => ({
+            selectedNumbers: prevState.selectedNumbers
+                .filter(number => number !== clickedNumber)
+        }));
+    }
     
     render () {
         console.log(Numbers.list);
@@ -26,8 +33,9 @@ class Game extends React.Component {
                 <hr />
                 <div className="row">
                     <Stars numberOfStars={this.state.randomNumOfStars}/>
-                    <Button />
-                    <Answer selectedNumbers={this.state.selectedNumbers} />
+                    <Button selectedNumbers={this.state.selectedNumbers} />
+                    <Answer selectedNumbers={this.state.selectedNumbers}
+                        unSelectNumber={this.deSelectNumber} />
                 </div>
                 <Numbers selectedNumbers={this.state.selectedNumbers}
                         selectNumber={this.selectNumber} />

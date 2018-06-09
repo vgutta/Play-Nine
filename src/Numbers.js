@@ -9,7 +9,7 @@ const Numbers = (props) => {
             return 'selected';
         }
     }
-    
+
     return (
         <div className="card text-center">
             <div>
